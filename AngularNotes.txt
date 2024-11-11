@@ -1,0 +1,110 @@
+Chapter 1 Install Process ---
+Download Node js
+Install Node js
+now run npm install -g @angular/cli
+to run the sever using following command
+ng serve 
+ng serve --o OR ng s --o to open directly in browser
+ng build to build the application
+...........................................................................................................
+Chapter 2 Important Files in the application
+
+Notes: When the application is started to run main.ts file is loaded atfirst
+Notes: For global css we use styles.css
+Notes: index.html is the common html page  
+
+1) Package.json -- All required Package details are mentioned here 
+
+2) Difference b/w devDependencies vs dependencies
+devDependencies don't deploy with the solution it's just use to write the code for developer
+dependencies are deployed with the solution
+
+3)angular.json -- Angular related details are mentioned here
+
+4).angular is used for cache 
+5) public folder is used for using image,logo
+6) src folder is used for writing the code
+............................................................................................................
+Chapter 3 Declare var and function in Angular js
+Notes: Always Declare var inside the class 
+Constructor(){} --- It's used by default 
+ name:string = "Sagnik";
+ input = "test";
+
+ to acces the value we use 
+
+ this.name 
+///// Declare function
+
+alertMessage(message:string)
+{
+  alert(message);
+}
+
+.............................................................................................................
+
+Chapter 4 Components in Angular
+First create Component Folder in the solution then redirect to the folder After,
+To create Components in Angular we use below command
+step1-
+ng generate components ComponentsName
+OR
+ng g c ComponentsName
+
+step2-
+In the appcomponent.ts file include component name in import section
+
+step3-
+Call the component as a html tag in appcomponent.html 
+
+step 4-
+@Component({
+  selector: 'app-add-emp',  //unique name it's used to import in appcomponent.ts file
+  standalone: true, // New Feature from Angular 17 this means all Components are independent
+  imports: [],
+  templateUrl: './add-emp.component.html', // we can add html also here for that we use template
+  styleUrl: './add-emp.component.css' // same as html 
+})
+
+1) Components are the building blocks of Angular application
+2) Components are used to display data on the UI
+.........................................................................................................
+Chapter 5 Data Binding in Angular js
+
+There are 2 ways to Data Binding ------------
+1)One way Data Binding
+2)Two way Data Binding
+
+One way Data Binding----
+(i) Using Interpolation ----- {{}} ------   to transfter data from .ts file to .html
+(ii) Using Property Binding ----- <div [class] = "className">Some text....</div> ----- to transfter data from .ts file to .html
+(iii) Using Event Binding ----- to transfter data from .html to .ts 
+
+step 1- Declare a function in .ts file
+alertMessage(message:string)
+{
+  alert(message);
+}
+step 2 Call the function
+<button (click)="alertMessage('Hello')">Press here</button>
+
+_____________________________________________________________________________________________________________
+Two way Data Binding----
+(i) Using NgModel Directive --- This feature helps us to comunicate between .ts and .html togetherly.
+Notes: Mainly use for input taken from user or dropdwon list
+
+Step 1-
+import FormModule in the component where user use to two way Binding
+
+step 2-
+in html use this
+<input type="text" [(NgModel)]/>  [()] -- this is called bannana bracket
+_____________________________________________________________________________________________________________
+Signal ---- It's new data binding method implement After Angular 17 or updated version
+In .ts file
+name = Signal("Tukai");
+to set the value in Signal use
+this.name.set("Bubai");
+In .html file
+{{name()}}  use this to access
+

@@ -102,7 +102,7 @@ in html use this
 _____________________________________________________________________________________________________________
 Signal ---- It's new data binding method implement After Angular 17 or updated version
 In .ts file
-name = Signal("Tukai");
+name = signal("Tukai");
 to set the value in Signal use
 this.name.set("Bubai");
 In .html file

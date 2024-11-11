@@ -1,5 +1,5 @@
 Chapter 1 Install Process ---
-Download Node js
+Download Node js 20.10.0
 Install Node js
 now run npm install -g @angular/cli
 to run the sever using following command

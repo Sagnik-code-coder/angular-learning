@@ -1,0 +1,61 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>Structural Directive</h1>
+  <p>*ngIf, *ngFor...</p>
+  <!--<button class="btn btn-primary" (click)="naviagteToAttribute()" >Go To Attribute</button> -->
+</div>
+<div class="row pt-3">
+  <div class="col-3">
+    <div *ngIf="isDiv1Visiable" class="bg-danger p-3 text-center">
+      <h4>Div-1 </h4>
+    </div>
+  </div>
+  <div class="col-3">
+    <div *ngIf="isDiv2Visiable" class="bg-success p-3 text-center">
+      <h4>Div-2 </h4>
+    </div>
+  </div>
+    <div class="col-3">
+      <div *ngIf="num1==num2" class="bg-secondary p-3 text-center">
+        <h4>Div-3 </h4>
+      </div>
+    </div>
+    <div class="col-3">
+      <!--<div *ngIf="isActive" class="bg-success p-3 text-center"> -->
+        <div *ngIf="selectedCountry=='Ind'" class="bg-success p-3 text-center">
+        <h4>Div-4 </h4>
+    </div>
+</div>
+    <div class="row pt-3">
+      <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
+        <button class="btn btn-primary mx-2" (click)="showDiv1()">Show</button>
+      </div>
+      <div class="row pt-3">
+        <div class="col-9 text-center">
+          <button class="btn btn-danger" (click)="toogleDiv2()">Toogle</button>
+        </div>
+      </div>
+      <div class="row pt-3">
+        <div class="col-12 text-center">
+          <input type="text" [(ngModel)]="num1">
+          <input type="text" [(ngModel)]="num2">
+        </div>
+      </div>
+      <div class="row pt-3">
+        <div class="col-12 text-center">
+          <input type="checkbox" [(ngModel)]="isActive" width="50%">
+          <select [(ngModel)]="selectedCountry">
+            <option value="">Select</option>
+            <option value="Ind">India</option>
+            <option value="=Usa">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+          </select>
+        </div>
+      </div>
+      <div class="row pt-3">
+        <ul>
+          <li *ngFor="let city of selectedStateList"> {{selectedStateList}}</li>
+        </ul>
+        </div>
+      </div>

@@ -91,7 +91,7 @@ step 2 Call the function
 _____________________________________________________________________________________________________________
 Two way Data Binding----
 (i) Using NgModel Directive --- This feature helps us to comunicate between .ts and .html togetherly.
-Notes: Mainly use for input taken from user or dropdwon list
+Notes: Mainly use for input taken from user or dropdownn list
 
 Step 1-
 import FormModule in the component where user use to two way Binding
@@ -107,4 +107,41 @@ to set the value in Signal use
 this.name.set("Bubai");
 In .html file
 {{name()}}  use this to access
+______________________________________________________________________________________________________________
+Chapter 6 Directives
+There are 2 type directives 
+1)Structural Directives (*ngIf,*ngFor)
+2)Attribute Directives (ngClass,ngStyle)
+
+1)Structural Directives
+*ngIf="True/False" only accept T/F based on that show or hide the element
+Notes: To use this we have to import in .ts file CommonModule,FormsModule
+.....................................................................................
+*ngFor="let item of items" use this to loop through the array 
+<li *ngFor="let city of selectedStateList"> {{selectedStateList}}</li>
+Mainly use to loop through array and show the option in the dropdown list
+.....................................................................................
+2)Attribute Directives
+ngClass="className" use this to add style in the element using ternary operator
+ngStyle ="styleName" use this to fetch the style from the backend
+_____________________________________________________________________________________________________________
+Chapter 7 Routing
+Routing is a process of navigating from one page to another page in angular application
+
+Step of Routing--------------
+1) Under app.routes.ts file add the following parameter
+   {
+    path:'any name can be given',
+    component:'component class name'
+   }
+2) import RouterLink in the app.component.ts 
+3) add the html code in app.component.html with RouterLink <li><a routerLink="Path mentioned in app.routes">Structural Directive</a></li>
+4) Finally add the below code Component in the app.component.html
+<div class="container">
+<router-outlet></router-outlet>
+</div>
+_____________________________________________________________________________________________________________
+
+
+
 

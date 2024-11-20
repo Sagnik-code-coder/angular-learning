@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NaPipe } from '../Pipe/na.pipe';
+import { NaPipe } from '../../Pipe/na.pipe';
 
 @Component({
   selector: 'app-pipe-learn',

@@ -115,10 +115,11 @@ There are 2 type directives
 
 1)Structural Directives
 *ngIf="True/False" only accept T/F based on that show or hide the element
-Notes: To use this we have to import in .ts file CommonModule,FormsModule
+Notes: To use this we have to import in .ts file CommonModule
 .....................................................................................
 *ngFor="let item of items" use this to loop through the array 
 <li *ngFor="let city of selectedStateList"> {{selectedStateList}}</li>
+Notes: To use this we have to import in .ts file FormsModule
 Mainly use to loop through array and show the option in the dropdown list
 .....................................................................................
 2)Attribute Directives
@@ -140,7 +141,59 @@ Step of Routing--------------
 <div class="container">
 <router-outlet></router-outlet>
 </div>
+
+2 ways to redirect from one Component to another component 
+1)html based routing (above mentioned process)
+2).ts file based routing 
+(i)declare a function inside .ts file 
+(ii) Add dependency injection Router service this way
+constructor(private router:Router)
+{
+
+}
+(iii)In function call it for routing
+reloadPage()
+{this.router.navigateByUrl(['path'])}
+(iv) 
+<button (click)="reloadPage()"></button>
+
 _____________________________________________________________________________________________________________
+Chapter 8 Control Flow (New Feature started from Angular 17)
+Control Flow is a new feature in Angular 17, which allows you to control the flow of your application using 
+@if()
+{
+
+}
+@else
+{
+
+}
+_____________________________________________________________________________________________________________
+Chapter 9 Pipes
+Pipes are used to transform the data in angular application
+default pipes are lowerCase,Uppercase,Date,json,async etc.
+To Use default pipe follow these steps.
+1)import CommonModule in the .ts file
+2)use the pipe in the html file <h2>After Using Pipe {{name | lowercase}}</h2>
+
+
+We can create custom pipes also.
+To create custom pipe follow these steps
+1) use this below command
+    ng g p PipeName
+2) import the pipe name in the .ts file where to use custom pipe
+3) write any logic under transform function in custom pipe 
+4)in html use custom pipe <h3>After using Custom pipe print object value {{student.City | PipeName}}</h3> 
+
+Notes: Interview Question
+1) Can we directly print object in html?
+Answer: No, we can't directly print object in html. We need to use json pipe for this
+
+2) In custom pipe which function is used by default?
+Answer: transform function is used by default in custom pipe.
+
+_____________________________________________________________________________________________________________
+Chapter 10 
 
 
 

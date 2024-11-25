@@ -193,8 +193,12 @@ Answer: No, we can't directly print object in html. We need to use json pipe for
 Answer: transform function is used by default in custom pipe.
 
 _____________________________________________________________________________________________________________
-Chapter 10 
-
+Chapter 10 Forms & Validation Forms 
+Forms are used to collect user input in angular application
+Steps to create Form and validate forms-----
+1) import FormsModule in the .ts file
+2) create form in html file using form tag
+3) 
 
 
 

@@ -199,6 +199,46 @@ Steps to create Form and validate forms-----
 1) import FormsModule in the .ts file
 2) create form in html file using form tag
 3) 
+_____________________________________________________________________________________________________________
+Chapter 11 Get API call
+API call is used to fetch data from server in angular application
+Steps to make API call
+1) Add provideHttpClient() in app.config.ts file
+2) in component.ts file inject httpClient 
+syntax: http = inject(HttpClient); or you can do using constructor
+3) use http.get() method to make API call
+4) use subscribe() method to get response from API call
+syntax: this.http.get('api_url').subscribe((res:any) =>
+{
+ console.log(res); 
+ this.users = res; // show the list of users
+})
 
+To see the list of user
+users: list = [];  // see line no. 214
 
-
+in html call this in below way
+@for(us of users; track $index)
+{
+  <div>{{us}}</div>
+} 
+_____________________________________________________________________________________________________________
+Chapter 12 Post API Call
+Steps to make API call
+1) Add provideHttpClient() in app.config.ts file
+2) in component.ts file inject httpClient 
+syntax: http = inject(HttpClient);
+3) use http.post() method to make API call
+4) data: any =
+{
+  "name": "",
+  "email": ""
+}
+5) use subscribe() method to get response from API call
+syntax: this.http.post('api_url', this.data).subscribe((res:any) =>
+{
+  console.log(res);
+  alert("New User Added");
+}
+)
+_____________________________________________________________________________________________________________

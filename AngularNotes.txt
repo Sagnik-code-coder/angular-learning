@@ -252,3 +252,24 @@ subscribe method is used in component to get the data
 step 1 
 i) inject the service 
 ii) call the method of service in component
+  export class GetServiceService {
+
+  constructor(private http: HttpClient) { }
+  getUser1(){
+    return this.http.get('https://jsonplaceholder.typicode.com/todos/1');
+  }
+}
+iii) In component inject the service
+     constructor(private getServ: GetServiceService) { }
+iv) Call the method define in service with subscribe 
+    getUser21()
+    {
+      this.getServ.getUser().subscribe((res:any)) =>  // here getServ.getUser() is getting from service file
+      {
+        console.log(res);
+      });
+    }
+Interview Question
+Can we store data in servcie ?
+Answer: Yes we can store data in service.
+_______________________________________________________________________________________________________________

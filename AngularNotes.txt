@@ -242,3 +242,13 @@ syntax: this.http.post('api_url', this.data).subscribe((res:any) =>
 }
 )
 _____________________________________________________________________________________________________________
+Chapter 13 Service in Angular
+Service is used to share data between components in angular application
+We use service to get reuse facility 
+To generate service write the below command ----
+ng generate service serviceName / ng g s serviceName
+In service we write just api code.
+subscribe method is used in component to get the data 
+step 1 
+i) inject the service 
+ii) call the method of service in component
